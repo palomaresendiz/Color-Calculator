@@ -8,6 +8,8 @@ package color.calculator;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
+import java.util.Random;
 
 import static javax.swing.WindowConstants.*;
 import javax.swing.JButton;
@@ -127,7 +129,8 @@ public class CalculatorUI implements ActionListener {
 
 
 	/**
-	 * Initializes and sets the frame size, buttons, panels. The main runner method of the UI class.
+     * The main runner method of the UI class.
+	 * Initializes UI and sets the frame size, buttons, panels.
 	 */
 	public void init() {
 		frame.setSize(300, 380);
@@ -188,7 +191,7 @@ public class CalculatorUI implements ActionListener {
 
 	/**
 	 * Event handling implementation for button pressing
-	 * @param e
+	 * @param e for event
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
