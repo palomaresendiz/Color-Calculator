@@ -9,11 +9,11 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
+
 import java.util.Random;
 
 import static javax.swing.WindowConstants.*;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -103,7 +103,9 @@ public class CalculatorUI implements ActionListener {
 		frame = new JFrame("Color Calculator");
 		frame.setResizable(false);
 		panel = new JPanel(new FlowLayout());
-		text = new JTextArea(2, 25);
+        panel.setBackground(new Color(49,49,49));
+		text = new JTextArea(3, 14);
+        text.setFont(text.getFont().deriveFont(18f));
 		calc = new Calculator();
 		
 
@@ -115,7 +117,7 @@ public class CalculatorUI implements ActionListener {
 
 		add = new JButton("+");
 		sub = new JButton("-");
-		mult = new JButton("*");
+		mult = new JButton("x");
 		div = new JButton("/");
 		equal = new JButton("=");
 		sqrRt = new JButton("√");
@@ -135,7 +137,7 @@ public class CalculatorUI implements ActionListener {
 	 * Initializes UI and sets the frame size, buttons, panels.
 	 */
 	public void init() {
-		frame.setSize(300, 380);
+		frame.setSize(270, 410);
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.add(panel);
 		panel.add(text);
@@ -282,77 +284,36 @@ public class CalculatorUI implements ActionListener {
     public void changeButtonColor() {
         Color randomColor = generateRandomColor();
         for (int i = 0; i < 10; i++) {
-            jButtons[i].setBackground(randomColor);
-            jButtons[i].setOpaque(true);
-            jButtons[i].setBorderPainted(false);
+            setButtonColor(jButtons[i], randomColor);
         }
-        add.setBackground(randomColor);
-        add.setOpaque(true);
-        add.setBorderPainted(false);
-
-        sub.setBackground(randomColor);
-        sub.setOpaque(true);
-        sub.setBorderPainted(false);
-
-        mult.setBackground(randomColor);
-        mult.setOpaque(true);
-        mult.setBorderPainted(false);
-
-        div.setBackground(randomColor);
-        div.setOpaque(true);
-        div.setBorderPainted(false);
-
-        sqr.setBackground(randomColor);
-        sqr.setOpaque(true);
-        sqr.setBorderPainted(false);
-
-        sqrRt.setBackground(randomColor);
-        sqrRt.setOpaque(true);
-        sqrRt.setBorderPainted(false);
-
-        inverse.setBackground(randomColor);
-        inverse.setOpaque(true);
-        inverse.setBorderPainted(false);
-
-        cos.setBackground(randomColor);
-        cos.setOpaque(true);
-        cos.setBorderPainted(false);
-
-
-        sin.setBackground(randomColor);
-        sin.setOpaque(true);
-        sin.setBorderPainted(false);
-
-        tan.setBackground(randomColor);
-        tan.setOpaque(true);
-        tan.setBorderPainted(false);
-
-        acos.setBackground(randomColor);
-        acos.setOpaque(true);
-        acos.setBorderPainted(false);
-
-        asin.setBackground(randomColor);
-        asin.setOpaque(true);
-        asin.setBorderPainted(false);
-
-        atan.setBackground(randomColor);
-        atan.setOpaque(true);
-        atan.setBorderPainted(false);
-
-        equal.setBackground(randomColor);
-        equal.setOpaque(true);
-        equal.setBorderPainted(false);
-
-        cancel.setBackground(randomColor);
-        cancel.setOpaque(true);
-        cancel.setBorderPainted(false);
-
-        color.setBackground(randomColor);
-        color.setOpaque(true);
-        color.setBorderPainted(false);
+        setButtonColor(add, randomColor);
+        setButtonColor(sub, randomColor);
+        setButtonColor(mult, randomColor);
+        setButtonColor(div, randomColor);
+        setButtonColor(sqr, randomColor);
+        setButtonColor(sqrRt, randomColor);
+        setButtonColor(inverse, randomColor);
+        setButtonColor(cos, randomColor);
+        setButtonColor(sin, randomColor);
+        setButtonColor(tan, randomColor);
+        setButtonColor(acos, randomColor);
+        setButtonColor(asin, randomColor);
+        setButtonColor(atan, randomColor);
+        setButtonColor(equal, randomColor);
+        setButtonColor(cancel, randomColor);
+        setButtonColor(color, randomColor);
 
         panel.revalidate();
         panel.repaint();
+    }
+
+    /*
+     * Helper function to set button color
+     */
+    private void setButtonColor(JButton button, Color color) {
+        button.setBackground(color);
+        button.setOpaque(true);
+        button.setBorderPainted(false);
     }
 
     /**
