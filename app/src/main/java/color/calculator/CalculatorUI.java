@@ -12,6 +12,8 @@ import java.awt.Color;
 import java.util.Random;
 
 import static javax.swing.WindowConstants.*;
+
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -243,6 +245,9 @@ public class CalculatorUI implements ActionListener {
 		} else if (source == cancel) {
 			writer(calc.reset());
 		}
+        else if (source == color) {
+            changeButtonColor();
+        }
 		text.selectAll();
 	}
 
@@ -278,27 +283,80 @@ public class CalculatorUI implements ActionListener {
         Color randomColor = generateRandomColor();
         for (int i = 0; i < 10; i++) {
             jButtons[i].setBackground(randomColor);
+            jButtons[i].setOpaque(true);
+            jButtons[i].setBorderPainted(false);
         }
         add.setBackground(randomColor);
+        add.setOpaque(true);
+        add.setBorderPainted(false);
+
         sub.setBackground(randomColor);
+        sub.setOpaque(true);
+        sub.setBorderPainted(false);
+
         mult.setBackground(randomColor);
+        mult.setOpaque(true);
+        mult.setBorderPainted(false);
+
         div.setBackground(randomColor);
+        div.setOpaque(true);
+        div.setBorderPainted(false);
+
         sqr.setBackground(randomColor);
+        sqr.setOpaque(true);
+        sqr.setBorderPainted(false);
+
         sqrRt.setBackground(randomColor);
+        sqrRt.setOpaque(true);
+        sqrRt.setBorderPainted(false);
+
         inverse.setBackground(randomColor);
+        inverse.setOpaque(true);
+        inverse.setBorderPainted(false);
+
         cos.setBackground(randomColor);
+        cos.setOpaque(true);
+        cos.setBorderPainted(false);
+
+
         sin.setBackground(randomColor);
+        sin.setOpaque(true);
+        sin.setBorderPainted(false);
+
         tan.setBackground(randomColor);
+        tan.setOpaque(true);
+        tan.setBorderPainted(false);
+
         acos.setBackground(randomColor);
+        acos.setOpaque(true);
+        acos.setBorderPainted(false);
+
         asin.setBackground(randomColor);
+        asin.setOpaque(true);
+        asin.setBorderPainted(false);
+
         atan.setBackground(randomColor);
+        atan.setOpaque(true);
+        atan.setBorderPainted(false);
+
         equal.setBackground(randomColor);
+        equal.setOpaque(true);
+        equal.setBorderPainted(false);
+
         cancel.setBackground(randomColor);
+        cancel.setOpaque(true);
+        cancel.setBorderPainted(false);
+
         color.setBackground(randomColor);
+        color.setOpaque(true);
+        color.setBorderPainted(false);
+
+        panel.revalidate();
+        panel.repaint();
     }
 
     /**
-     * Helper function to generate a rando color 
+     * Helper function to generate a random color 
      * @return a random color object
      */
     public Color generateRandomColor() {
