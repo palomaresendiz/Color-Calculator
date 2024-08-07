@@ -22,7 +22,8 @@ public class Calculator {
     public twoOperator mode = twoOperator.normal;
 
     /**
-     * The enumeration that returns the specified operation result
+     * twoOpOperations handles the enumeration that returns the specified operation result.
+     * @return returns the called operand's result
      */
     public Double twoOpOperations() {
         if (mode == twoOperator.normal) {
@@ -41,5 +42,26 @@ public class Calculator {
             return num1 / num2;
         }
         throw new Error();
+            }
+        
+    /**
+     * twoOpCaller handles the = operand. It calls primitives if not = operand)
+     * Updates the num1 and num2 values and returns the result of the operation.
+     * If normal, it displays the num and clears the mode
+     * @param newMode the method of operation being passed
+     * @param num the number being passed for calculation
+     * @return 
+     */
+    public Double twoOpCaller(twoOperator newMode, Double num) {
+        if (mode != twoOperator.normal) {
+            num2 = num;
+            num1 = twoOpOperations();
+            mode = newMode;
+            return num1;
+        } else {
+            num1 = num;
+            mode = newMode;
+            return Double.NaN;
+        }
     }
 }
