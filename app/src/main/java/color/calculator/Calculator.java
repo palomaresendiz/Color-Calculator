@@ -64,4 +64,66 @@ public class Calculator {
             return Double.NaN;
         }
     }
+
+    /**
+	 * The caller for = to determine if primitives or =
+	 * @param num the number passed from the calculator
+	 * @return
+	 */
+	public Double calculateEqual(Double num) {
+		if (mode == twoOperator.normal) {
+			return num;
+		}
+		return twoOpCaller(twoOperator.normal, num);
+	}
+
+    /**
+	 * Clears all numbers and text from the calculator
+	 * @return
+	 */
+	public Double reset() {
+		num2 = 0.0;
+		num1 = 0.0;
+		mode = twoOperator.normal;
+
+		return Double.NaN;
+	}
+
+    /**
+	 * Caller function that passes the mode for a single operator function, and returns
+     * the correct value depending on which math button is pressed.
+	 * @param newMode determines the single operation type
+	 * @param num the number from the user as input from buttons
+	 * @return
+	 */
+    public Double singleOpCaller(singleOperator newMode, Double num) {
+        if (newMode == singleOperator.square) {
+            return num * num;
+        }
+        if (newMode == singleOperator.squareRoot) {
+            return Math.sqrt(num);
+        }
+        if (newMode == singleOperator.oneDividedBy) {
+            return 1 / num;
+        }
+        if (newMode == singleOperator.cos) {
+            return Math.cos(num);
+        }
+        if (newMode == singleOperator.sin) {
+            return Math.sin(Math.toRadians(num));
+        }
+        if (newMode == singleOperator.tan) {
+            return Math.tan(num);
+        }
+        if (newMode == singleOperator.acos) {
+            return Math.acos(num);
+        }
+        if (newMode == singleOperator.aisn) {
+            return Math.asin(num);
+        }
+        if (newMode == singleOperator.atan) {
+            return Math.atan(num);
+        }
+        throw new Error();
+    }
 }
