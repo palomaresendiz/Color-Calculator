@@ -270,4 +270,42 @@ public class CalculatorUI implements ActionListener {
 			text.setText(Double.toString(num));
 		}
 	}
-} 
+
+    /**
+     * Change the color of all the buttons to a random color
+     */
+    public void changeButtonColor() {
+        Color randomColor = generateRandomColor();
+        for (int i = 0; i < 10; i++) {
+            jButtons[i].setBackground(randomColor);
+        }
+        add.setBackground(randomColor);
+        sub.setBackground(randomColor);
+        mult.setBackground(randomColor);
+        div.setBackground(randomColor);
+        sqr.setBackground(randomColor);
+        sqrRt.setBackground(randomColor);
+        inverse.setBackground(randomColor);
+        cos.setBackground(randomColor);
+        sin.setBackground(randomColor);
+        tan.setBackground(randomColor);
+        acos.setBackground(randomColor);
+        asin.setBackground(randomColor);
+        atan.setBackground(randomColor);
+        equal.setBackground(randomColor);
+        cancel.setBackground(randomColor);
+        color.setBackground(randomColor);
+    }
+
+    /**
+     * Helper function to generate a rando color 
+     * @return a random color object
+     */
+    public Color generateRandomColor() {
+        Random rand = new Random();
+        float r = rand.nextFloat();
+        float g = rand.nextFloat();
+        float b = rand.nextFloat();
+        return new Color(r, g, b);
+    } 
+}
