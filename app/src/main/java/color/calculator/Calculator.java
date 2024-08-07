@@ -1,5 +1,5 @@
 /*
- * This class completes the main functions of the calculator by enumerating the
+ * This class handles the core functionality of the calculator by enumerating the
  * actions and using a constructor that returns the appropriately enumerated command.
  * Then, it can split into two operator or single operator calculations using the
  * .operand which completes the actual calculation and returns the correct values.
@@ -66,7 +66,7 @@ public class Calculator {
     }
 
     /**
-	 * The caller for = to determine if primitives or =
+	 * This caller handles the calculation wehn = is pressed.
 	 * @param num the number passed from the calculator
 	 * @return
 	 */
