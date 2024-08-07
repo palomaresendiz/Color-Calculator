@@ -8,8 +8,12 @@ package color.calculator;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
+
+import java.util.Random;
 
 import static javax.swing.WindowConstants.*;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -83,7 +87,7 @@ public class CalculatorUI implements ActionListener {
 	public final JFrame frame;
 	public  final JPanel panel;
 	public  final JTextArea text;
-	public final JButton jButtons[], add, sub, mult, div, equal, cancel, sqrRt, sqr, inverse, cos, sin, tan;
+	public final JButton jButtons[], add, sub, mult, div, equal, cancel, sqrRt, sqr, inverse, cos, sin, tan, color;
 	public  final String[] buttonValue = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 	public  final Calculator calc;
@@ -96,10 +100,12 @@ public class CalculatorUI implements ActionListener {
 		acos = new JButton("Cos⁻¹");
         asin = new JButton("Sin⁻¹");
         atan = new JButton("Tan⁻¹");
-		frame = new JFrame("Calculator");
+		frame = new JFrame("Color Calculator");
 		frame.setResizable(false);
 		panel = new JPanel(new FlowLayout());
-		text = new JTextArea(2, 25);
+        panel.setBackground(new Color(49,49,49));
+		text = new JTextArea(3, 14);
+        text.setFont(text.getFont().deriveFont(18f));
 		calc = new Calculator();
 		
 
@@ -111,7 +117,7 @@ public class CalculatorUI implements ActionListener {
 
 		add = new JButton("+");
 		sub = new JButton("-");
-		mult = new JButton("*");
+		mult = new JButton("x");
 		div = new JButton("/");
 		equal = new JButton("=");
 		sqrRt = new JButton("√");
@@ -120,17 +126,18 @@ public class CalculatorUI implements ActionListener {
 		cos = new JButton("Cos");
 		sin = new JButton("Sin");
 		tan = new JButton("Tan");
-		cancel = new JButton("C");
-
+		cancel = new JButton("Clear");
+        color = new JButton("Color!");
 		
 	}
 
 
 	/**
-	 * Initializes and sets the frame size, buttons, panels. The main runner method of the UI class.
+     * The main runner method of the UI class.
+	 * Initializes UI and sets the frame size, buttons, panels.
 	 */
 	public void init() {
-		frame.setSize(300, 340);
+		frame.setSize(270, 410);
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.add(panel);
 		panel.add(text);
@@ -159,6 +166,7 @@ public class CalculatorUI implements ActionListener {
 		panel.add(atan);
 		panel.add(equal);
 		panel.add(cancel);
+        panel.add(color);
 	}
 	private void AddActionListeners() {
 		// add event listeners
@@ -180,13 +188,14 @@ public class CalculatorUI implements ActionListener {
 		tan.addActionListener(this);
 		equal.addActionListener(this);
 		cancel.addActionListener(this);
+        color.addActionListener(this);
 
 		frame.setVisible(true);
 	}
 
 	/**
 	 * Event handling implementation for button pressing
-	 * @param e
+	 * @param e for event
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -238,6 +247,9 @@ public class CalculatorUI implements ActionListener {
 		} else if (source == cancel) {
 			writer(calc.reset());
 		}
+        else if (source == color) {
+            changeButtonColor();
+        }
 		text.selectAll();
 	}
 
@@ -265,4 +277,54 @@ public class CalculatorUI implements ActionListener {
 			text.setText(Double.toString(num));
 		}
 	}
-} 
+
+    /**
+     * Change the color of all the buttons to a random color
+     */
+    public void changeButtonColor() {
+        Color randomColor = generateRandomColor();
+        for (int i = 0; i < 10; i++) {
+            setButtonColor(jButtons[i], randomColor);
+        }
+        setButtonColor(add, randomColor);
+        setButtonColor(sub, randomColor);
+        setButtonColor(mult, randomColor);
+        setButtonColor(div, randomColor);
+        setButtonColor(sqr, randomColor);
+        setButtonColor(sqrRt, randomColor);
+        setButtonColor(inverse, randomColor);
+        setButtonColor(cos, randomColor);
+        setButtonColor(sin, randomColor);
+        setButtonColor(tan, randomColor);
+        setButtonColor(acos, randomColor);
+        setButtonColor(asin, randomColor);
+        setButtonColor(atan, randomColor);
+        setButtonColor(equal, randomColor);
+        setButtonColor(cancel, randomColor);
+        setButtonColor(color, randomColor);
+
+        panel.revalidate();
+        panel.repaint();
+    }
+
+    /*
+     * Helper function to set button color
+     */
+    private void setButtonColor(JButton button, Color color) {
+        button.setBackground(color);
+        button.setOpaque(true);
+        button.setBorderPainted(false);
+    }
+
+    /**
+     * Helper function to generate a random color 
+     * @return a random color object
+     */
+    public Color generateRandomColor() {
+        Random rand = new Random();
+        float r = rand.nextFloat();
+        float g = rand.nextFloat();
+        float b = rand.nextFloat();
+        return new Color(r, g, b);
+    } 
+}
