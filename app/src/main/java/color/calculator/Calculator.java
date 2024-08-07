@@ -15,7 +15,7 @@ public class Calculator {
 
     public enum singleOperator {
         square, squareRoot, oneDividedBy, cos, sin, tan,
-        acos, aisn, atan
+        acos, asin, atan
     }
 
     public Double num1, num2;
@@ -118,7 +118,7 @@ public class Calculator {
         if (newMode == singleOperator.acos) {
             return Math.acos(num);
         }
-        if (newMode == singleOperator.aisn) {
+        if (newMode == singleOperator.asin) {
             return Math.asin(num);
         }
         if (newMode == singleOperator.atan) {
