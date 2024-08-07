@@ -83,7 +83,7 @@ public class CalculatorUI implements ActionListener {
 	public final JFrame frame;
 	public  final JPanel panel;
 	public  final JTextArea text;
-	public final JButton jButtons[], add, sub, mult, div, equal, cancel, sqrRt, sqr, inverse, cos, sin, tan;
+	public final JButton jButtons[], add, sub, mult, div, equal, cancel, sqrRt, sqr, inverse, cos, sin, tan, color;
 	public  final String[] buttonValue = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 	public  final Calculator calc;
@@ -96,7 +96,7 @@ public class CalculatorUI implements ActionListener {
 		acos = new JButton("Cos⁻¹");
         asin = new JButton("Sin⁻¹");
         atan = new JButton("Tan⁻¹");
-		frame = new JFrame("Calculator");
+		frame = new JFrame("Color Calculator");
 		frame.setResizable(false);
 		panel = new JPanel(new FlowLayout());
 		text = new JTextArea(2, 25);
@@ -120,8 +120,8 @@ public class CalculatorUI implements ActionListener {
 		cos = new JButton("Cos");
 		sin = new JButton("Sin");
 		tan = new JButton("Tan");
-		cancel = new JButton("C");
-
+		cancel = new JButton("Clear");
+        color = new JButton("Color!");
 		
 	}
 
@@ -130,7 +130,7 @@ public class CalculatorUI implements ActionListener {
 	 * Initializes and sets the frame size, buttons, panels. The main runner method of the UI class.
 	 */
 	public void init() {
-		frame.setSize(300, 340);
+		frame.setSize(300, 380);
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.add(panel);
 		panel.add(text);
@@ -159,6 +159,7 @@ public class CalculatorUI implements ActionListener {
 		panel.add(atan);
 		panel.add(equal);
 		panel.add(cancel);
+        panel.add(color);
 	}
 	private void AddActionListeners() {
 		// add event listeners
@@ -180,6 +181,7 @@ public class CalculatorUI implements ActionListener {
 		tan.addActionListener(this);
 		equal.addActionListener(this);
 		cancel.addActionListener(this);
+        color.addActionListener(this);
 
 		frame.setVisible(true);
 	}
