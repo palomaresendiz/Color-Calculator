@@ -1,18 +1,45 @@
 /*
- * This class completes the big functions of the calculator by enumerating the
+ * This class completes the main functions of the calculator by enumerating the
  * actions and using a constructor that returns the appropriately enumerated command.
- * Then, it can split into two operator and one operator calculations using the
+ * Then, it can split into two operator or single operator calculations using the
  * .operand which completes the actual calculation and returns the correct values.
  */
 
 package color.calculator;
 
 public class Calculator {
-    public String getGreeting() {
-        return "Hello World!";
+
+    public enum twoOperator {
+        normal, add, subtract, multiply, divide
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Calculator().getGreeting());
+    public enum singleOperator {
+        square, squareRoot, oneDividedBy, cos, sin, tan,
+        acos, aisn, atan
+    }
+
+    public Double num1, num2;
+    public twoOperator mode = twoOperator.normal;
+
+    /**
+     * The enumeration that returns the specified operation result
+     */
+    public Double twoOpOperations() {
+        if (mode == twoOperator.normal) {
+            return num2;
+        }
+        if (mode == twoOperator.add) {
+            return num1 + num2;
+        }
+        if (mode == twoOperator.subtract) {
+            return num1 - num2;
+        }
+        if (mode == twoOperator.multiply) {
+            return num1 * num2;
+        }
+        if (mode == twoOperator.divide) {
+            return num1 / num2;
+        }
+        throw new Error();
     }
 }
