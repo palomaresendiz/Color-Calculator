@@ -25,6 +25,16 @@ It changes color! <br>
 The Color Calculator generates an RGB color when the button is clicked so the color is random every time!
 
 ## Testing
+This project is complete with testing for the Calculator class and the CalculatorUI class.  
+I wrote extensive tests to validate each calculator arithmetic.  
+
+
+<div style="display: flex; justify-content: space-between;">
+<img width="263" alt="test1" src="https://github.com/user-attachments/assets/45883d59-dbc4-4efc-947e-2c64f83a940c">
+<img width="252" alt="test2" src="https://github.com/user-attachments/assets/fb4568d6-9507-4f47-ae5b-224dbf11cc28">
+</div>  <br>
+
+They both pass all the tests
 
 ## Installation and Setup Instructions
 Clone down this repository. You will need `JDK`, `Gradle`, and an IDE on your machine; I use VS Code
@@ -33,6 +43,10 @@ Clone down this repository. You will need `JDK`, `Gradle`, and an IDE on your ma
 - Enjoy doing your calculations in the Color Calc
 
 ## What I Learned
-Utilized Gradle build system, optimized VS Code to debug and perform extensive testing
+Utilizing the Gradle build system was not new to me, so I didn't have difficulty setting it up and creating the environment. This project allowed me to deepen my Java and object-oriented programming understanding, especially on Java Swing.  
 
+  
+I had never dealt with this many event handlers in a project before so the hard part was keeping them all straight and constantly testing them with the console log to make sure they were working as expected. Gradle allowed me to automate testing and it enhanced the efficiency of my development process, allowing for easier project management and scalability down the road.  
 
+  
+Overall, this project was a creative way for me to enhance my problem-solving skills and make me more confident to approach future projects with expertise.
