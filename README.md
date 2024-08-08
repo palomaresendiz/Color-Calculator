@@ -32,8 +32,8 @@ I wrote extensive tests to validate each calculator arithmetic.
 
 
 <div style="display: flex; justify-content: space-between;">
-<img width="263" alt="test1" src="https://github.com/user-attachments/assets/45883d59-dbc4-4efc-947e-2c64f83a940c">
 <img width="252" alt="test2" src="https://github.com/user-attachments/assets/fb4568d6-9507-4f47-ae5b-224dbf11cc28">
+<img width="263" alt="test1" src="https://github.com/user-attachments/assets/45883d59-dbc4-4efc-947e-2c64f83a940c">
 </div>  <br>
 
 They both pass all the tests
