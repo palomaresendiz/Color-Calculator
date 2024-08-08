@@ -4,6 +4,7 @@
 Color Calculator is a Java app with advanced trigonometric calculations. Implemented with Swing to create GUI elements and achieve a special feature to randomize button colors with a single click!
 
 ## Demo Video
+[![Color Calculator Demo](https://img.youtube.com/vi/RxMJaRIUn_M/0.jpg)](https://www.youtube.com/watch?v=RxMJaRIUn_M)
 
 ## Screenshots
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The calculator app upon opening
@@ -20,6 +21,7 @@ but when you click the <b>Color!</b> button  <br><br>
 <img width="300" height="450" alt="pic3" src="https://github.com/user-attachments/assets/2308c6ed-2796-46d0-b735-254e3bc68f77"> <br>
 It changes color! <br>
 <img width="300" height="450" alt="pic4" src="https://github.com/user-attachments/assets/427386ae-970a-4824-8b62-93b5d85f327e">
+<img width="300" height="450" alt="Screenshot 2024-08-08 at 11 33 24 AM" src="https://github.com/user-attachments/assets/71044f33-0ac3-4244-91cb-432ad43b34a8">
 </div>
 
 The Color Calculator generates an RGB color when the button is clicked so the color is random every time!
@@ -36,7 +38,7 @@ I wrote extensive tests to validate each calculator arithmetic.
 
 They both pass all the tests
 
-## Installation and Setup Instructions
+## Installation and Setup Process
 Clone down this repository. You will need `JDK`, `Gradle`, and an IDE on your machine; I use VS Code
 - Run the project within your IDE
 - Wait for Java app to open
@@ -46,7 +48,7 @@ Clone down this repository. You will need `JDK`, `Gradle`, and an IDE on your ma
 Utilizing the Gradle build system was not new to me, so I didn't have difficulty setting it up and creating the environment. This project allowed me to deepen my Java and object-oriented programming understanding, especially on Java Swing.  
 
   
-I had never dealt with this many event handlers in a project before so the hard part was keeping them all straight and constantly testing them with the console log to make sure they were working as expected. Gradle allowed me to automate testing and it enhanced the efficiency of my development process, allowing for easier project management and scalability down the road.  
+I had never dealt with this many ActionListeners and ActionEvents in a project before, so the hard part was keeping them all straight and constantly testing them with print statements to make sure they were working as expected. Gradle allowed me to automate testing and it enhanced the efficiency of my development process, allowing for easier project management and scalability down the road.  
 
   
-Overall, this project was a creative way for me to enhance my problem-solving skills and make me more confident to approach future projects with expertise.
+Overall, this project was a creative way for me to enhance my problem-solving skills and make me more confident to approach future Java projects with expertise.
